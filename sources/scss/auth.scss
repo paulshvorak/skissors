@@ -1,0 +1,134 @@
+.page-auth {
+	.main {
+		position: relative;
+		height: 100vh;
+		max-height: 100vh;
+		&__left {
+			position: fixed;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			width: 50%;
+			background-image: url("../images/example.jpg");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+		&__right {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 50%;
+			overflow-y: auto;
+			.auth {
+				max-width: 372px;
+				margin: 0 auto;
+				padding: 32px 16px;
+				&__logo {
+					display: block;
+					max-width: 100%;
+					margin: 0 auto 50px;
+				}
+				&__header {
+					@include flexbox();
+					@include align-items(center);
+					@include justify-content(space-between);
+					margin: 0 0 60px;
+					.link {
+						font-size: 12px;
+					}
+				}
+				&__message {
+					margin: 0 0 30px;
+					font-size: 12px;
+					line-height: 20px;
+				}
+				&__tabs {
+					@include flexbox();
+					@include flex-wrap(wrap);
+					margin: 0 0 40px;
+					.content {
+						display: none;
+						width: 100%;
+						padding: 30px 20px;
+						color: $gray;
+						border-left: 1px solid $primary;
+						border-right: 1px solid $primary;
+						border-bottom: 1px solid $primary;
+					}
+					.tab-item {
+						width: calc(100% /3);
+						border-top-left-radius: 25px;
+						border-top-right-radius: 25px;
+						border: 1px solid $primary;
+						color: $primary;
+						font-size: 14px;
+						line-height: 14px;
+						padding: 19px 4px 15px;
+						text-align: center;
+						background-color: $gray-light;
+					}
+					label:hover {
+						color: #888;
+						cursor: pointer;
+					}
+					input {
+						display: none;
+					}
+					input:checked + .tab-item {
+						background-color: $white;
+						border-bottom: 1px solid $white;
+					}
+					
+					#tab1:checked ~ .content-tab1,
+					#tab2:checked ~ .content-tab2,
+					#tab3:checked ~ .content-tab3 {
+						display: block;
+					}
+				}
+				&__switch {
+					
+				}
+				&__form {
+					.inner {
+						margin: 0 0 80px;
+						.select {
+							margin: 0 0 20px;
+							padding: 0 0 20px;
+							border-bottom: 1px solid $gray-lighter;
+						}
+						.specialities {
+							&__title {
+								margin: 0 0 40px;
+								text-align: center;
+								font-size: 12px;
+								font-weight: bold;
+								color: $gray;
+							}
+							&__inner {
+								width: 500px;
+								margin-left: -80px;
+							}
+						}
+					}
+					.actions {
+						margin: 0 0 40px;
+					}
+					.more-actions {
+						@include flexbox();
+						@include justify-content(space-between);
+						.link {
+							font-size: 12px;
+						}
+						&__txt {
+							color: $gray;
+							font-size: 12px;
+							line-height: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+// Colors
+
+$primary:              #C21C31;
+
+$black:                 #000;
+$gray-dark:             #333333;
+$gray:                  #666666;
+$gray-light:            #F7F7F7;
+$gray-lighter:          #E6E6E6;
+$white:                 #fff;
+
+$facebook:              #4D7EA8;
+
+$success:               #44AF69;
+$error:                 #C21C31;
+
+// Input
+
+$input-font-size:       17px;
+$input-border-radius:   5px;
+
+// Container
+
+$container-width:       1180px;
+
+// Media queries
+
+$screen-xs:             420px;
+$screen-sm:             768px;
+$screen-md:             992px;
+$screen-lg:             1420px;
+$screen-xlg:            1920px;
+
+$screen-2xs-max:        $screen-xs - 1;
+$screen-xs-max:         $screen-sm - 1;
+$screen-sm-max:         $screen-md - 1;
+$screen-md-max:         $screen-lg - 1;
