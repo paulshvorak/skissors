@@ -62,3 +62,189 @@
 		}
 	}
 }
+
+.listing {
+	&__header {
+		@include flexbox();
+		@include justify-content(space-between);
+		@include align-items(center);
+		padding: 33px 0;
+		.left {
+			@include flexbox();
+			@include justify-content(space-between);
+			@include align-items(center);
+			width: 40%;
+			.results {
+				font-size: 14px;
+				color: $gray-dark;
+			}
+			.sort {
+				font-size: 12px;
+				font-weight: bold;
+				color: $gray;
+			}
+		}
+		.right {
+			@include flexbox();
+			@include justify-content(flex-end);
+			@include align-items(center);
+			width: calc(60%);
+			.tabs {
+				position: relative;
+				bottom: -4px;
+				margin-right: 40px;
+				&__item {
+					padding-left: 26px;
+					padding-right: 26px;
+				}
+			}
+		}
+	}
+	&__inner {
+		@include flexbox();
+		@include justify-content(space-between);
+		@include align-items(flex-start);
+		.aside {
+			width: 40%;
+			&__item {
+				position: relative;
+				@include flexbox();
+				@include justify-content(space-between);
+				@include align-items(center);
+				padding: 20px;
+				transition: .15s ease;
+				cursor: pointer;
+				.left {
+					@include flexbox();
+					@include align-items(flex-start);
+					width: calc(100% - 24px);
+					.pic {
+						width: 140px;
+						height: 140px;
+						margin-right: 20px;
+					}
+					.info {
+						width: calc(100% - 160px);
+						&__title {
+							margin-bottom: 32px;
+						}
+						&__salon {
+							margin-bottom: 10px;
+						}
+					}
+				}
+				.right {
+					.mark {
+						width: 14px;
+						height: 27px;
+						background-image: url("../images/mark-sprite.png");
+						background-position: 0 0;
+						cursor: pointer;
+						&:hover {
+							background-position: 0 -54px;
+						}
+						&:active, .active {
+							background-position: 0 -27px;
+						}
+					}
+				}
+				&:not(:last-child) {
+					&:after {
+						content: '';
+						position: absolute;
+						left: 20px;
+						right: 20px;
+						bottom: 0;
+						height: 1px;
+						background-color: $gray-lighter;
+					}
+				}
+				&:hover, &.active {
+					transform: scale(1.01);
+					box-shadow: 0 0 5px 2px rgba(0,0,0,.05);
+					background-color: $white;
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+		.inner {
+			width: calc(60% - 20px);
+			padding: 20px;
+			&__pic {
+				display: block;
+				width: 100%;
+				max-width: 100%;
+				margin: 0 0 20px;
+			}
+			&__header {
+				margin: 0 0 22px;
+			}
+			&__info {
+				@include flexbox();
+				@include align-items(center);
+				margin: 0 0 30px;
+				.info__salon {
+					margin-right: 28px;
+				}
+			}
+			&__description {
+				margin: 0 0 40px;
+				line-height: 21px;
+				font-size: 14px;
+				color: #4D4D4D;
+			}
+			&__map {
+				@include flexbox();
+				@include justify-content(center);
+				@include align-items(center);
+				height: 300px;
+				background-color: #888888;
+				color: $white;
+				font-size: 28px;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+.post-job {
+	padding: 80px 150px 60px;
+	&__photo {
+		margin: 0 0 40px;
+	}
+	&__details {
+		max-width: 660px;
+		.title {
+			margin: 0 0 40px;
+		}
+		.form {
+			&__item {
+				@include flexbox();
+				@include justify-content(space-between);
+				@include align-items(flex-end);
+				.input-wrapper {
+					width: calc(50% - 20px);
+					&:not(:last-child) {
+						margin-bottom: 0;
+					}
+					&--block {
+						width: 100%;
+					}
+				}
+				&:not(:last-child) {
+					margin-bottom: 40px;
+				}
+			}
+			&__actions {
+				@include flexbox();
+				@include justify-content(space-between);
+				.btn {
+					width: calc(50% - 20px);
+				}
+			}
+		}
+	}
+}

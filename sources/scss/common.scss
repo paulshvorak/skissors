@@ -1,3 +1,8 @@
+html {
+	height: 100%;
+	background-color: $gray-light;
+}
+
 a {
 	font-size: inherit;
 	font-family: 'Open Sans', sans-serif;
@@ -40,14 +45,20 @@ a {
 *::selection {
   color: $white;
   background: $primary;
+}
 
+.width-crop {
+	max-width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
 }
 
 // Inputs style
 
 .input-wrapper {
 	position: relative;
-	input {
+	input, textarea {
 		text-align: center;
 		transition: .15s ease;
 		&:focus {
@@ -58,9 +69,15 @@ a {
 			}
 		}
 	}
+	textarea {
+		padding: 40px;
+		height: 150px;
+		text-align: left;
+		resize: none;
+	}
 	label {
 		position: absolute;
-		top: 22px;
+		top: 20px;
 		left: 20px;
 		font-size: 10px;
 		font-weight: bold;
@@ -76,13 +93,13 @@ a {
 		color: $error;
 	}
 	.success {
-		input {
+		input, textarea {
 			border-color: $error;
 			color: $error;
 		}
 	}
 	&.has-value {
-		input {
+		input, textarea {
 			margin-top: 20px;
 		}
 		label {
@@ -94,13 +111,13 @@ a {
 		.error-message {
 			display: block;
 		}
-		input {
+		input, textarea {
 			border-color: $error;
 			color: $error;
 		}
 	}
 	&.success {
-		input {
+		input, textarea {
 			border-color: $success;
 			color: $success;
 		}
@@ -113,9 +130,10 @@ a {
 input[type="date"],
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+textarea {
 	width: 100%;
-	padding: 16px 20px;
+	padding: 13px 20px;
 	font-size: $input-font-size;
 	line-height: $input-font-size;
 	color: $gray;
@@ -136,7 +154,7 @@ input[type="password"] {
 		left: 50%;
 		transform: translate(-50%, -50%);
 		padding: 0 20px;
-		background-color: $white;
+		background-color: $gray-light;
 	}
 }
 
@@ -243,6 +261,15 @@ input[type="password"] {
 	&:active {
 		background-color: darken($primary, 10%);
 	}
+	&--empty {
+		background-color: transparent;
+		border-color: $primary;
+		color: $primary;
+		&:hover {
+			background-color: $primary;
+			color: $white;
+		}
+	}
 	&--fb {
 		background-color: $facebook;
 		border-color: $facebook;
@@ -257,17 +284,103 @@ input[type="password"] {
 	&--block {
 		width: 100%;
 	}
+	&--sm {
+		width: 120px;
+		padding: 13px 12px;
+		font-size: 12px;
+		font-weight: bold;
+		text-transform: none;
+	}
+	&--gray {
+		color: $gray-dark;
+		background-color: $gray-light;
+		border-color: $gray-lighter;
+		&:hover {
+			background-color: darken($gray-light, 10%);
+			border-color: darken($gray-lighter, 10%);
+		}
+	}
 }
 
 // Titles
+
+.section__title {
+	padding: 40px 0 30px;
+}
 
 .title {
 	font-size: 24px;
 	font-weight: bold;
 	line-height: 28px;
+	&--md {
+		font-size: 20px;
+		line-height: 24px;
+	}
 	&--sm {
 		font-size: 16px;
 		line-height: 19px;
 	}
 }
 
+.info {
+	&__title {
+		font-weight: bold;
+		color: $black;
+	}
+	&__salon {
+		font-size: 13px;
+		font-weight: bold;
+		letter-spacing: 0.02em;
+		color: $gray-dark;
+	}
+	&__location {
+		font-size: 10px;
+		letter-spacing: 0.02em;
+		color: $gray-dark;
+	}
+}
+
+.inner__header {
+	@include flexbox();
+	@include justify-content(space-between);
+	@include align-items(center);
+	.actions {
+		@include flexbox();
+		&__item {
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+		}
+	}
+}
+
+// Block styles
+
+.section-style {
+	background-color: $white;
+	border-radius: 5px;
+	border: 1px solid $gray-lighter;
+}
+
+// Tabs
+
+.tabs {
+	@include flexbox();
+	border-bottom: 1px solid $gray-lighter;
+	&__item {
+		padding-bottom: 21px;
+		font-size: 12px;
+		font-weight: bold;
+		transition: .15s ease;
+		cursor: pointer;
+		border-bottom: 2px solid transparent;
+		&:hover {
+			color: $primary;
+			border-color: $primary;
+		}
+		&.active {
+			color: $primary;
+			border-color: $primary;
+		}
+	}
+}
