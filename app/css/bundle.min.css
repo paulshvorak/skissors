@@ -199,7 +199,7 @@ input[type=text],input[type=email],input[type=password],input[type=date],textare
 .post-job__details .form__item .input-wrapper--block{width:100%}
 .post-job__details .form__actions .btn,.post-job__details .form__item .half{width:calc(50% - 20px)}
 .post-job__details .form__item:not(:last-child){margin-bottom:40px}
-.post-job__details .form__actions{display:flex;-webkit-justify-content:space-between;-moz-justify-content:space-between;-ms-justify-content:space-between;justify-content:space-between;-ms-flex-pack:space-between}
+.post-job__details .form__actions{display:flex;-webkit-justify-content:space-between;-moz-justify-content:space-between;-ms-justify-content:space-between;justify-content:space-between;-ms-flex-pack:space-between;margin:80px 0 0}
 .profile__header .avatar,.profile__header .avatar__empty{width:140px;height:140px;margin-right:20px}
 .profile__header{display:flex;padding:40px 0}
 .profile__header .avatar__empty,.profile__header .info{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex}

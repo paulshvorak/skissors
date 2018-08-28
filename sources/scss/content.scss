@@ -293,6 +293,7 @@
 			&__actions {
 				@include flexbox();
 				@include justify-content(space-between);
+				margin: 80px 0 0;
 				.btn {
 					width: calc(50% - 20px);
 				}
