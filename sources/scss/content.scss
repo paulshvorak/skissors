@@ -119,9 +119,24 @@
 					@include align-items(flex-start);
 					width: calc(100% - 24px);
 					.pic {
+						min-width: 140px;
 						width: 140px;
 						height: 140px;
 						margin-right: 20px;
+						&__empty {
+							@include flexbox();
+							@include justify-content(center);
+							@include align-items(center);
+							min-width: 140px;
+							height: 140px;
+							width: 140px;
+							margin-right: 20px;
+							background-color: #DEDEDE;
+							img {
+								max-width: 44px;
+								max-height: 44px;
+							}
+						}
 					}
 					.info {
 						width: calc(100% - 160px);
@@ -177,6 +192,14 @@
 				width: 100%;
 				max-width: 100%;
 				margin: 0 0 20px;
+				&-empty {
+					@include flexbox();
+					@include justify-content(center);
+					@include align-items(center);
+					margin: 0 0 20px;
+					height: 230px;
+					background-color: #DEDEDE;
+				}
 			}
 			&__header {
 				margin: 0 0 22px;
@@ -214,6 +237,32 @@
 	padding: 80px 150px 60px;
 	&__photo {
 		margin: 0 0 40px;
+		.title {
+			margin: 0 0 40px;
+		}
+		.photo {
+			@include flexbox();
+			.avatar {
+				&__empty {
+					@include flexbox();
+					@include justify-content(center);
+					@include align-items(center);
+					width: 140px;
+					height: 140px;
+					margin-right: 20px;
+					background-color: #DEDEDE;
+				}
+			}
+			.info {
+				@include flexbox();
+				@include flex-direction(column);
+				@include justify-content(space-between);
+				&__title {
+					font-size: 12px;
+					font-weight: normal;
+				}
+			}
+		}
 	}
 	&__details {
 		max-width: 660px;
@@ -234,6 +283,9 @@
 						width: 100%;
 					}
 				}
+				.half {
+					width: calc(50% - 20px);
+				}
 				&:not(:last-child) {
 					margin-bottom: 40px;
 				}
@@ -244,6 +296,257 @@
 				.btn {
 					width: calc(50% - 20px);
 				}
+			}
+		}
+	}
+}
+
+.profile {
+	&__header {
+		@include flexbox();
+		padding: 40px 0;
+		.avatar {
+			width: 140px;
+			height: 140px;
+			margin-right: 20px;
+			&__empty {
+				@include flexbox();
+				@include justify-content(center);
+				@include align-items(center);
+				width: 140px;
+				height: 140px;
+				margin-right: 20px;
+				background-color: #DEDEDE;
+			}
+		}
+		.info {
+			@include flexbox();
+			@include flex-direction(column);
+			@include justify-content(space-between);
+			&__salon {
+				margin-bottom: 10px;
+			}
+		}
+	}
+	&__inner {
+		@include flexbox();
+		@include justify-content(space-between);
+		@include align-items(flex-start);
+		.inner {
+			width: calc(71% - 20px);
+			margin-right: 20px;
+			padding: 40px 70px;
+			&__tabs {
+				margin: 0 0 40px;
+				.tabs__item {
+					width: calc(100% / 3);
+				}
+			}
+			.portfolio {
+				&__header {
+					margin: 0 0 40px;
+					.actions {
+						.btn {
+							&:not(:last-child) {
+								margin-right: 10px;
+							}
+						}
+					}
+				}
+				&__list {
+					@include flexbox();
+					@include flex-wrap(wrap);
+					.item {
+						position: relative;
+						width: calc((100% - 68px) / 3);
+						height: 202px;
+						margin-bottom: 34px;
+						border-radius: 5px;
+						overflow: hidden;
+						&__pic {
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							width: 100%;
+							min-height: 100%;
+						}
+						&__delete {
+							position: absolute;
+							top: 0;
+							right: 0;
+							width: 44px;
+							height: 44px;
+							@include flexbox();
+							@include justify-content(center);
+							@include align-items(center);
+							overflow: hidden;
+							//border-top-right-radius: 5px;
+							border-bottom-left-radius: 5px;
+							background-color: rgba(255, 255, 255, .8);
+							transition: .15s ease;
+							cursor: pointer;
+							&:hover {
+								background-color: rgba(255, 255, 255, 1);
+							}
+						}
+						&:nth-child(3n+1), &:nth-child(3n+2) {
+							margin-right: 34px;
+						}
+					}
+				}
+				&__empty {
+					padding: 80px 16px;
+					background-color: $gray-light;
+					.add-btn {
+						display: block;
+						margin: 0 auto 20px;
+					}
+					.txt {
+						text-align: center;
+						line-height: 21px;
+						color: #4D4D4D;
+					}
+				}
+			}
+			.experience {
+				padding: 0 0 30px;
+				.title {
+					margin: 0 0 40px;
+				}
+				.subtitle {
+					margin: 0 0 44px;
+					font-size: 18px;
+					font-weight: bold;
+					color: $gray-dark;
+				}
+				.form {
+					&__item {
+						@include flexbox();
+						@include justify-content(space-between);
+						@include align-items(flex-end);
+						margin: 0 0 30px;
+						.input-wrapper {
+							width: calc(50% - 30px);
+							&:not(:last-child) {
+								margin: 0;
+							}
+							&--block {
+								width: 100%;
+							}
+						}
+						&--half {
+							margin: 0 0 70px;
+							width: calc(50% - 30px);
+							.input-wrapper {
+								width: calc(50% - 5px);
+							}
+						}
+					}
+				}
+			}
+			.reviews {
+				@include flexbox();
+				@include justify-content(space-between);
+				@include align-items(flex-start);
+				&__inner {
+					width: calc(100% - 320px);
+					.title {
+						margin: 0 0 24px;
+					}
+					.list {
+						&__item {
+							padding: 20px 0;
+							.info {
+								@include flexbox();
+								@include align-items(flex-start);
+								margin: 0 0 20px;
+								&__avatar {
+									margin-right: 24px;
+									width: 40px;
+									height: 40px;
+									overflow: hidden;
+									border-radius: 50%;
+									img {
+										display: block;
+										max-width: 100%;
+										max-height: 100%;
+									}
+								}
+								&__inner {
+									margin-right: 57px;
+									.name {
+										margin: 0 0 6px;
+										color: $black;
+									}
+									.nickname {
+										font-size: 10px;
+										color: $gray-dark;
+									}
+								}
+							}
+							.txt {
+								line-height: 20px;
+								font-size: 13px;
+								color: #4D4D4D;
+							}
+							&:not(:last-child) {
+								border-bottom: 1px solid $gray-lighter;
+							}
+						}
+					}
+				}
+				&__add-comment {
+					width: 265px;
+					.title {
+						margin: 0 0 35px;
+					}
+					.comment {
+						padding: 20px;
+						border: 1px solid $gray-lighter;
+						border-radius: 5px;
+						&__txt {
+							margin: 0 0 40px;
+							line-height: 20px;
+							font-size: 13px;
+							color: #4D4D4D;
+						}
+						&__stars {
+							margin: 0 0 40px;
+						}
+						&__actions {
+							.btn {
+								text-transform: uppercase;
+								font-weight: normal;
+							}
+						}
+					}
+				}
+			}
+		}
+		.aside {
+			width: 29%;
+			padding: 30px;
+			.title {
+				margin: 0 0 20px;
+				color: $black;
+			}
+			.txt {
+				line-height: 21px;
+			}
+			&__specialities {
+				padding: 0 0 20px;
+				border-bottom: 1px solid $gray-lighter;
+			}
+			&__info {
+				padding: 20px 0;
+				border-bottom: 1px solid $gray-lighter;
+				.email {
+					margin: 0 0 10px;
+				}
+			}
+			&__bio {
+				padding: 20px 0 0;
 			}
 		}
 	}

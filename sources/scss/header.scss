@@ -1,3 +1,63 @@
 .header {
-	
+	background: $white;
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+	&__inner {
+		padding: 30px 0;
+		@include flexbox();
+		@include justify-content(space-between);
+		@include align-items(center);
+	}
+	&__filters {
+		@include flexbox();
+		padding: 20px 0;
+		border-top: 1px solid $gray-lighter;
+		.item {
+			width: 20%;
+			&:first-child {
+				width: 37%;
+			}
+			&:not(:last-child) {
+				margin-right: 20px;
+				margin-bottom: 0;
+			}
+			input {
+				text-align: left;
+				&:focus {
+					margin-top: 0;
+					&~label {
+						display: none;
+					}
+				}
+			}
+			&.has-value {
+				input {
+					margin-top: 0;
+				}
+				label {
+					display: none;
+				}
+			}
+		}
+		.select {
+			&:after, &:before {
+				top: 25px;
+			}
+		}
+	}
+	&__menu {
+		display: none;
+	}
+	&__nav {
+		@include flexbox();
+		.item {
+			font-size: 14px;
+			font-weight: bold;
+			&:not(:last-child) {
+				margin-right: 70px;
+			}
+			&.active {
+				color: $primary;
+			}
+		}
+	}
 }

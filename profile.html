@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bonnti</title>
+	<link rel="stylesheet" href="app/css/bundle.min.css">
+</head>
+<body>
+
+<div class="page">
+
+	<header class="header">
+		<div class="container">
+			<div class="header__inner">
+				<a href="index.html" class="header__logo">
+					<img src="app/images/logo-new.png" alt="logo">
+				</a>
+				<div class="header__nav">
+					<a href="#" class="item link link--default">Job Board</a>
+					<a href="#" class="item link link--default">Post Job</a>
+					<a href="#" class="item link link--default">My Profile</a>
+					<a href="#" class="item link link--default">Sign Out</a>
+				</div>
+				<div class="header__menu"></div>
+			</div>
+			<form class="header__filters">
+				<div class="input-wrapper item">
+					<input id="filters-text" type="text">
+					<label for="filters-text">Job Title, Keyword, or Salon</label>
+					<div class="error-message">Error message</div>
+				</div>
+				<div class="input-wrapper item">
+					<input id="filters-location" type="text">
+					<label for="filters-location">Location</label>
+					<div class="error-message">Error message</div>
+				</div>
+				<div class="select item">
+					<select>
+						<option value="7 miles">7 miles</option>
+						<option value="7 miles">7 miles</option>
+						<option value="7 miles">7 miles</option>
+						<option value="7 miles">7 miles</option>
+					</select>
+				</div>
+				<button class="btn item">search</button>
+			</form>
+		</div>
+	</header>
+
+	<main class="main">
+
+		<div class="container">
+			<div class="profile">
+				<div class="profile__header">
+					<!--
+
+					-----Avatar empty-----
+
+					<div class="avatar__empty">
+						<img src="app/images/icon-avatar--gray.png" alt="empty avatar">
+					</div>
+
+					-->
+					<img class="avatar" src="app/images/aside__item.jpg" alt="avatar">
+					<div class="info">
+						<div class="info__title">Janet Smith</div>
+						<div class="info__inner">
+							<div class="info__salon">Salon Name</div>
+							<div class="info__location">Anytownm USA</div>
+						</div>
+						<button class="btn btn--sm btn--gray">Edit Profile</button>
+					</div>
+				</div>
+				<div class="profile__inner">
+					<div class="inner section-style">
+						<div class="inner__tabs tabs">
+							<div class="tabs__item active">Portoflio</div>
+							<div class="tabs__item">Experiences</div>
+							<div class="tabs__item">Reviews</div>
+						</div>
+						<div style="display: none" class="portfolio">
+							<div class="inner__header portfolio__header">
+								<div class="title">Portfolio</div>
+								<div class="actions">
+									<button class="btn btn--sm btn--gray">Edit</button>
+									<button class="btn btn--sm btn--gray">Upload</button>
+									<button class="btn btn--sm">Stop Editing</button>
+								</div>
+							</div>
+							<div class="portfolio__list">
+								<div class="item">
+									<img src="app/images/aside__item.jpg" alt="portfolio items" class="item__pic">
+									<div class="item__delete">
+										<img src="app/images/icon-close--red.png" alt="close icon">
+									</div>
+								</div>
+								<div class="item">
+									<img src="app/images/aside__item.jpg" alt="portfolio items" class="item__pic">
+									<div class="item__delete">
+										<img src="app/images/icon-close--red.png" alt="close icon">
+									</div>
+								</div>
+								<div class="item">
+									<img src="app/images/aside__item.jpg" alt="portfolio items" class="item__pic">
+									<div class="item__delete">
+										<img src="app/images/icon-close--red.png" alt="close icon">
+									</div>
+								</div>
+								<div class="item">
+									<img src="app/images/aside__item.jpg" alt="portfolio items" class="item__pic">
+									<div class="item__delete">
+										<img src="app/images/icon-close--red.png" alt="close icon">
+									</div>
+								</div>
+							</div>
+							<div class="portfolio__empty">
+								<img src="app/images/icon-add--gray.png" alt="icon add" class="add-btn">
+								<div class="txt">There are no portfolio photos yet<br>Start Adding...</div>
+							</div>
+						</div>
+						<div style="display: none" class="experience">
+							<div class="title">Experience</div>
+							<div class="subtitle">Place 1</div>
+							<form action="" class="experience__form form">
+								<div class="form__item">
+									<div class="input-wrapper">
+										<input id="experience-speciality" type="text">
+										<label for="experience-speciality">Speciality</label>
+										<div class="error-message">Error message</div>
+									</div>
+									<div class="input-wrapper">
+										<input id="experience-place" type="text">
+										<label for="experience-place">Place</label>
+										<div class="error-message">Error message</div>
+									</div>
+								</div>
+								<div class="form__item form__item--half">
+									<div class="input-wrapper has-value">
+										<input id="experience-date-from" type="date">
+										<label for="experience-date-from">From</label>
+										<div class="error-message">Error message</div>
+									</div>
+									<div class="input-wrapper has-value">
+										<input id="experience-date-to" type="date">
+										<label for="experience-date-to">To</label>
+										<div class="error-message">Error message</div>
+									</div>
+								</div>
+								<div class="form__item">
+									<div class="input-wrapper input-wrapper--block">
+										<textarea id="experience-nore-details"></textarea>
+										<label for="experience-nore-details">More About this Job</label>
+										<div class="error-message">Error message</div>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="reviews">
+							<div class="reviews__inner">
+								<div class="title title--sm">Reviews</div>
+								<div class="list">
+									<div class="list__item">
+										<div class="info">
+											<div class="info__avatar">
+												<img src="app/images/aside__item.jpg" alt="avatar">
+											</div>
+											<div class="info__inner">
+												<div class="name">Jessica Anthony</div>
+												<div class="nickname">@jessicaanthony</div>
+											</div>
+											<div class="info__stars"></div>
+										</div>
+										<div class="txt">Looking for that look you’ve been wanting but no one to do it for you…well try these guys out. Guaranteed</div>
+									</div>
+									<div class="list__item">
+										<div class="info">
+											<div class="info__avatar">
+												<img src="app/images/aside__item.jpg" alt="avatar">
+											</div>
+											<div class="info__inner">
+												<div class="name">Jessica Anthony</div>
+												<div class="nickname">@jessicaanthony</div>
+											</div>
+											<div class="info__stars"></div>
+										</div>
+										<div class="txt">Looking for that look you’ve been wanting but no one to do it for you…well try these guys out. Guaranteed</div>
+									</div>
+								</div>
+							</div>
+							<div class="reviews__add-comment">
+								<div class="title title--sm">Add your comment</div>
+								<div class="comment">
+									<div class="comment__txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et sodales tellus. Pellentesque in lacinia tortor. Duis rhoncus commodo suscipit.</div>
+									<div class="comment__stars">stars</div>
+									<div class="comment__actions">
+										<button class="btn btn--sm btn--block">submit</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="aside section-style">
+						<div class="aside__specialities">
+							<div class="title title--sm">Specialities</div>
+							<div class="txt">Wig, Weave, Make - Up</div>
+						</div>
+						<div class="aside__info">
+							<div class="email">example@email.com</div>
+							<div class="phone">212-399-4074</div>
+						</div>
+						<div class="aside__bio">
+							<div class="title title--sm">Bio</div>
+							<div class="txt">Welcome to Bonnti! Helping stylist get the recognition they deserve and making it easier to navigate your hair experience Boston, MA, USA</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+</div>
+
+</body>
+
+</html>
