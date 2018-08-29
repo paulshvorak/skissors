@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bonnti</title>
+	<link rel="stylesheet" href="app/css/bundle.min.css">
+</head>
+<body>
+
+<div class="page">
+
+	<header class="header">
+		<div class="container">
+			<div class="header__inner">
+				<a href="index.html" class="header__logo">
+					<img src="app/images/logo-new.png" alt="logo">
+				</a>
+				<div class="header__nav">
+					<a href="#" class="item link link--default">Job Board</a>
+					<a href="#" class="item link link--default">Post Job</a>
+					<a href="#" class="item link link--default">My Profile</a>
+					<a href="#" class="item link link--default">Sign Out</a>
+				</div>
+				<div class="header__menu"></div>
+			</div>
+			<form class="header__filters">
+				<div class="input-wrapper item">
+					<input id="filters-text" type="text">
+					<label for="filters-text">Job Title, Keyword, or Salon</label>
+					<div class="error-message">Error message</div>
+				</div>
+				<div class="input-wrapper item">
+					<input id="filters-location" type="text">
+					<label for="filters-location">Location</label>
+					<div class="error-message">Error message</div>
+				</div>
+				<div class="select item">
+					<select>
+						<option value="7 miles">7 miles</option>
+						<option value="7 miles">7 miles</option>
+						<option value="7 miles">7 miles</option>
+						<option value="7 miles">7 miles</option>
+					</select>
+				</div>
+				<button class="btn item">search</button>
+			</form>
+		</div>
+	</header>
+
+	<main class="main">
+
+		<div class="container">
+			<div class="section__title title">My Profile</div>
+			<div class="edit-profile section-style">
+				<div class="edit-profile__aside">
+					<div class="item active">Profile</div>
+					<div class="item">Experience</div>
+					<div class="item">Specialities</div>
+				</div>
+				<div class="edit-profile__inner">
+					<div style="display: none" class="profile">
+						<div class="profile__switch switch">
+							<div class="switch__title">Select Account Type</div>
+							<div class="switch__inner">
+								<div class="switch__list">
+									<input id="profile-switch-stylist" type="radio" name="group" checked>
+									<label class="item" for="profile-switch-stylist">Stylist</label>
+									<input id="profile-switch-salon" type="radio" name="group">
+									<label class="item" for="profile-switch-salon">Salon</label>
+									<input id="profile-switch-vendor" type="radio" name="group">
+									<label class="item" for="profile-switch-vendor">Vendor</label>
+								</div>
+							</div>
+						</div>
+						<form class="profile__form form">
+							<div class="title">Personal Data</div>
+							<div class="form__item form__item--avatar">
+								<input id="edit-profile-avatar" type="file">
+								<label for="edit-profile-avatar">
+									<div class="inner">
+										<img src="app/images/icon-avatar--dark-gray.png" alt="avatar icon">
+										<div class="avatar-title">Add Photo</div>
+									</div>
+								</label>
+							</div>
+							<div class="form__item">
+								<div class="input-wrapper">
+									<input id="edit-profile-fullname" type="text">
+									<label for="edit-profile-fullname">Full name</label>
+									<div class="error-message">Error message</div>
+								</div>
+								<div class="input-wrapper">
+									<input id="edit-profile-email" type="text">
+									<label for="edit-profile-email">Email</label>
+									<div class="error-message">Error message</div>
+								</div>
+							</div>
+							<div class="form__item">
+								<div class="input-wrapper">
+									<input id="edit-profile-username" type="text">
+									<label for="edit-profile-username">Username</label>
+									<div class="error-message">Error message</div>
+								</div>
+								<div class="input-wrapper">
+									<input id="edit-profile-phone" type="text">
+									<label for="edit-profile-phone">Phone Number</label>
+									<div class="error-message">Error message</div>
+								</div>
+							</div>
+							<div class="form__item form__item--password">
+								<div class="title">Change Password</div>
+								<div class="input-wrapper">
+									<input id="edit-profile-password" type="text">
+									<label for="edit-profile-password">Password</label>
+									<div class="error-message">Error message</div>
+								</div>
+								<div class="input-wrapper">
+									<input id="edit-profile-repeate-password" type="text">
+									<label for="edit-profile-repeate-password">Repeate Password</label>
+									<div class="error-message">Error message</div>
+								</div>
+							</div>
+							<div class="actions">
+								<button class="btn">save changes</button>
+							</div>
+						</form>
+					</div>
+					<div style="display: none" class="experience">
+						<div class="edit-profile__title title">Work Experience</div>
+						<div class="subtitle">Place 1</div>
+						<form action="" class="experience__form form">
+							<div class="form__item">
+								<div class="input-wrapper">
+									<input id="experience-speciality" type="text">
+									<label for="experience-speciality">Speciality</label>
+									<div class="error-message">Error message</div>
+								</div>
+								<div class="input-wrapper">
+									<input id="experience-place" type="text">
+									<label for="experience-place">Place</label>
+									<div class="error-message">Error message</div>
+								</div>
+							</div>
+							<div class="form__item form__item--half">
+								<div class="input-wrapper has-value">
+									<input id="experience-date-from" type="date">
+									<label for="experience-date-from">From</label>
+									<div class="error-message">Error message</div>
+								</div>
+								<div class="input-wrapper has-value">
+									<input id="experience-date-to" type="date">
+									<label for="experience-date-to">To</label>
+									<div class="error-message">Error message</div>
+								</div>
+							</div>
+							<div class="form__item">
+								<div class="input-wrapper input-wrapper--block">
+									<textarea id="experience-nore-details"></textarea>
+									<label for="experience-nore-details">More About this Job</label>
+									<div class="error-message">Error message</div>
+								</div>
+							</div>
+							<div class="actions">
+								<button class="btn btn--empty">add new place</button>
+								<button class="btn">save changes</button>
+							</div>
+						</form>
+					</div>
+					<form class="specialities-wrapper form">
+						<div class="edit-profile__title title">Specialities</div>
+						<div class="specialities">
+							<div class="specialities__inner">
+								<div class="item">
+									<input id="specialities-item-01" type="checkbox">
+									<label for="specialities-item-01">Blow Out</label>
+								</div>
+								<div class="item">
+									<input id="specialities-item-02" type="checkbox">
+									<label for="specialities-item-02">Blow Out</label>
+								</div>
+								<div class="item">
+									<input id="specialities-item-03" type="checkbox">
+									<label for="specialities-item-03">Blow Out</label>
+								</div>
+								<div class="item">
+									<input id="specialities-item-04" type="checkbox">
+									<label for="specialities-item-04">Blow Out</label>
+								</div>
+								<div class="item">
+									<input id="specialities-item-05" type="checkbox">
+									<label for="specialities-item-05">Blow Out</label>
+								</div>
+								<div class="item">
+									<input id="specialities-item-06" type="checkbox">
+									<label for="specialities-item-06">Blow Out</label>
+								</div>
+								<div class="item">
+									<input id="specialities-item-07" type="checkbox">
+									<label for="specialities-item-07">Blow Out</label>
+								</div>
+								<div class="item">
+									<input id="specialities-item-08" type="checkbox">
+									<label for="specialities-item-08">Blow Out</label>
+								</div>
+								<div class="item">
+									<input id="specialities-item-09" type="checkbox">
+									<label for="specialities-item-09">Blow Out</label>
+								</div>
+								<div class="item">
+									<input id="specialities-item-10" type="checkbox">
+									<label for="specialities-item-10">Blow Out</label>
+								</div>
+							</div>
+						</div>
+						<div class="actions">
+							<button class="btn">save changes</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</main>
+
+</div>
+
+</body>
+
+</html>

@@ -415,6 +415,51 @@ textarea {
 	background-color: $white;
 	border-radius: 5px;
 	border: 1px solid $gray-lighter;
+	overflow: hidden;
+}
+
+// Switch
+
+.switch {
+	&__title {
+		margin: 0 0 12px;
+		font-size: 12px;
+		color: $gray;
+		font-weight: bold;
+	}
+	&__inner {
+		@include flexbox();
+		input {
+			display: none;
+			&:checked {
+				&+.item {
+					background-color: $primary;
+					color: $white;
+				}
+			}
+		}
+		.item {
+			padding: 16px 28px;
+			color: $primary;
+			border-radius: 35px;
+			transition: .15s ease;
+			cursor: pointer;
+			&:hover {
+				background-color: lighten($primary, 20%);
+				color: $white;
+			}
+			&:active {
+				background-color: $primary;
+				color: $white;
+			}
+		}
+	}
+	&__list {
+		@include flexbox();
+		padding: 8px;
+		border-radius: 35px;
+		border: 1px solid $primary;
+	}
 }
 
 // Tabs
