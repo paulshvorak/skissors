@@ -82,6 +82,25 @@
 				font-size: 12px;
 				font-weight: bold;
 				color: $gray;
+				select {
+					background: none;
+					border: none;
+					font-size: 12px;
+					font-weight: bold;
+					color: $gray;
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					text-indent: 1px;
+					text-overflow: '';
+					transition: .15s ease;
+					cursor: pointer;
+					&:focus {
+						outline: none;
+					}
+					&:hover {
+						color: $black;
+					}
+				}
 			}
 		}
 		.right {
@@ -158,7 +177,7 @@
 						&:hover {
 							background-position: 0 -54px;
 						}
-						&:active, .active {
+						&:active, &.active {
 							background-position: 0 -27px;
 						}
 					}
@@ -223,6 +242,19 @@
 				@include justify-content(center);
 				@include align-items(center);
 				height: 300px;
+				background-color: #888888;
+				color: $white;
+				font-size: 28px;
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			&--map {
+				@include flexbox();
+				@include justify-content(center);
+				@include align-items(center);
+				height: 470px;
+				padding: 0;
+				border-radius: 5px;
 				background-color: #888888;
 				color: $white;
 				font-size: 28px;
@@ -507,10 +539,21 @@
 						border: 1px solid $gray-lighter;
 						border-radius: 5px;
 						&__txt {
-							margin: 0 0 40px;
+							resize: none;
+							height: 100px;
+							border-radius: 0;
+							padding: 0;
+							overflow-y: auto;
+							margin: 0 0 35px;
 							line-height: 20px;
 							font-size: 13px;
 							color: #4D4D4D;
+							background-color: transparent;
+							border: none;
+							transition: .15s ease;
+							&:hover, &:focus {
+								background-color: $gray-light;
+							}
 						}
 						&__stars {
 							margin: 0 0 40px;
