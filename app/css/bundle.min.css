@@ -134,14 +134,17 @@ input[type=text],input[type=email],input[type=password],input[type=date],textare
 .page-auth .main__right .auth__header .link{font-size:12px}
 .page-auth .main__right .auth__message{margin:0 0 30px;font-size:12px;line-height:20px}
 .page-auth .main__right .auth__tabs{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-moz-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:0 0 40px}
+.page-auth .main__right .auth__form .inner,.page-auth .main__right .auth__switch{margin:0 0 80px}
 .page-auth .main__right .auth__tabs .content{display:none;width:100%;padding:30px 20px;color:#666;border-left:1px solid #C21C31;border-right:1px solid #C21C31;border-bottom:1px solid #C21C31}
 .page-auth .main__right .auth__tabs .tab-item{width:calc(100% /3);border-top-left-radius:25px;border-top-right-radius:25px;border:1px solid #C21C31;color:#C21C31;font-size:14px;line-height:14px;padding:19px 4px 15px;text-align:center;background-color:#F7F7F7}
 .page-auth .main__right .auth__tabs label:hover{color:#888;cursor:pointer}
 .page-auth .main__right .auth__tabs input{display:none}
 .page-auth .main__right .auth__tabs input:checked+.tab-item{background-color:#fff;border-bottom:1px solid #fff}
 .page-auth .main__right .auth__tabs #tab1:checked~.content-tab1,.page-auth .main__right .auth__tabs #tab2:checked~.content-tab2,.page-auth .main__right .auth__tabs #tab3:checked~.content-tab3{display:block}
-.page-auth .main__right .auth__form .inner{margin:0 0 80px}
+.page-auth .main__right .auth__switch .switch__list{width:100%}
+.page-auth .main__right .auth__switch .switch__list .item{width:50%;padding:18px 28px;text-align:center}
 .page-auth .main__right .auth__form .inner .select{margin:0 0 20px;padding:0 0 20px;border-bottom:1px solid #E6E6E6}
+.page-auth .main__right .auth__form .inner .select__title{color:#666}
 .page-auth .main__right .auth__form .inner .specialities__title{margin:0 0 40px;text-align:center;font-size:12px;font-weight:700;color:#666}
 .page-auth .main__right .auth__form .inner .specialities__inner{width:500px;margin-left:-80px}
 .page-auth .main__right .auth__form .actions{margin:0 0 40px}
@@ -270,6 +273,7 @@ input[type=text],input[type=email],input[type=password],input[type=date],textare
 .edit-profile__aside{width:220px;background-color:#F7F7F7;border-right:1px solid #E6E6E6}
 .edit-profile__aside .item{padding:36px 16px 36px 40px;color:#333;background-color:#fff;cursor:pointer;transition:.15s ease}
 .edit-profile__aside .item.active,.edit-profile__aside .item.active:hover{background-color:#C21C31;color:#fff}
+.edit-profile__aside .item.active{box-shadow:inset 0 5px 20px rgba(0,0,0,.2)}
 .edit-profile__aside .item:hover{background-color:#f2f2f2}
 .edit-profile__inner{width:calc(100% - 220px);padding:60px 150px 80px}
 .edit-profile__inner .profile__switch{margin:0 0 60px}

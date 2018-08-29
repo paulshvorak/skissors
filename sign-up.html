@@ -79,9 +79,20 @@
 					<div class="title">Sign Up</div>
 					<a class="link link--underline-default" href="#">Or Sign In to your account</a>
 				</div>
-				<div class="auth__message">Are you licensed ?</div>
 				<form class="auth__form">
 					<div class="inner">
+						<div class="auth__message">Are you licensed ?</div>
+						<div class="auth__switch switch">
+							<div class="switch__title">Select Account Type</div>
+							<div class="switch__inner">
+								<div class="switch__list">
+									<input id="sign-up-license-yes" type="radio" name="group" checked>
+									<label class="item" for="sign-up-license-yes">Yes</label>
+									<input id="sign-up-license-no" type="radio" name="group">
+									<label class="item" for="sign-up-license-no">No</label>
+								</div>
+							</div>
+						</div>
 						<div class="select">
 							<div class="select__title">Select School</div>
 							<select>

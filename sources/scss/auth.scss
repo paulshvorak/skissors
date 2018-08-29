@@ -88,12 +88,23 @@
 					}
 				}
 				&__switch {
-					
+					margin: 0 0 80px;
+					.switch__list {
+						width: 100%;
+						.item {
+							width: 50%;
+							padding: 18px 28px;
+							text-align: center;
+						}
+					}
 				}
 				&__form {
 					.inner {
 						margin: 0 0 80px;
 						.select {
+							&__title {
+								color: $gray;
+							}
 							margin: 0 0 20px;
 							padding: 0 0 20px;
 							border-bottom: 1px solid $gray-lighter;
