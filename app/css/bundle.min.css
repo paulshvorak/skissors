@@ -546,12 +546,23 @@ input[type=date],input[type=text],input[type=email],input[type=password],textare
 .info__location,.info__salon{letter-spacing:.02em;color:#333}
 .info__salon{font-size:13px}
 .info__location{font-size:10px}
-.switch__title,.tabs__item{font-size:12px;font-weight:700}
 .inner__header{display:flex;-webkit-justify-content:space-between;-moz-justify-content:space-between;-ms-justify-content:space-between;justify-content:space-between;-ms-flex-pack:space-between;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;align-items:center}
 .inner__header .actions{display:flex}
-.switch__inner,.switch__list{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex}
+.pagination,.pagination__inner{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex}
 .inner__header .actions__item:not(:last-child){margin-right:20px}
 .section-style{background-color:#fff;border-radius:5px;border:1px solid #E6E6E6}
+.pagination{display:flex;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;align-items:center}
+.pagination__left,.pagination__right{position:relative;min-width:50px;width:50px;height:50px;border:1px solid #ccc;transition:.15s ease;cursor:pointer}
+.pagination__left:after,.pagination__right:after{position:absolute;top:13px;left:20px;font-size:22px;font-family:FontAwesome}
+.pagination__left:hover,.pagination__right:hover{border-color:#C21C31;color:#C21C31}
+.pagination__left:after{content:'\f104'}
+.pagination__right:after{content:'\f105'}
+.pagination__inner{display:flex;padding:0 12px}
+.switch__inner,.switch__list{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex}
+.pagination__inner .item{margin:0 20px;font-size:16px;font-weight:700;transition:.15s ease;cursor:pointer}
+.switch__title,.tabs__item{font-size:12px;font-weight:700}
+.pagination__inner .item.active,.pagination__inner .item:hover{color:#C21C31}
+.pagination--full{-webkit-justify-content:space-between;-moz-justify-content:space-between;-ms-justify-content:space-between;justify-content:space-between;-ms-flex-pack:space-between}
 .switch__title{margin:0 0 12px;color:#666}
 .switch__inner{display:flex}
 .switch__inner input{display:none}
@@ -649,6 +660,7 @@ input[type=date],input[type=text],input[type=email],input[type=password],textare
 .listing__inner .aside__item:not(:last-child):after{content:'';position:absolute;left:20px;right:20px;bottom:0;height:1px;background-color:#E6E6E6}
 .listing__inner .aside__item.active,.listing__inner .aside__item:hover{transform:scale(1.01);box-shadow:0 0 5px 2px rgba(0,0,0,.05);background-color:#fff}
 .listing__inner .aside__item.active:after,.listing__inner .aside__item:hover:after{display:none}
+.listing__inner .aside .pagination{padding:30px 20px}
 .listing__inner .inner{width:calc(60% - 20px);padding:20px}
 .listing__inner .inner__pic{display:block;width:100%;max-width:100%;margin:0 0 20px}
 .listing__inner .inner__pic-empty{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;justify-content:center;-ms-flex-pack:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;align-items:center;margin:0 0 20px;height:230px;background-color:#DEDEDE}

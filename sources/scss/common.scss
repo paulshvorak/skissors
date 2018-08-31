@@ -450,6 +450,60 @@ textarea {
 	overflow: hidden;
 }
 
+// Pagintaion
+
+.pagination {
+	@include flexbox();
+	@include align-items(center);
+	&__left, &__right {
+		position: relative;
+		min-width: 50px;
+		width: 50px;
+		height: 50px;
+		border: 1px solid #ccc;
+		transition: .15s ease;
+		cursor: pointer;
+		&:after {
+			position: absolute;
+			top: 13px;
+			left: 20px;
+			font-size: 22px;
+			font-family: FontAwesome;
+		}
+		&:hover {
+			border-color: $primary;
+			color: $primary;
+		}
+	}
+	&__left {
+		&:after {
+			content: '\f104';
+		}
+	}
+	&__right {
+		&:after {
+			content: '\f105';
+		}
+	}
+	&__inner {
+		@include flexbox();
+		padding: 0 12px;
+		.item {
+			margin: 0 20px;
+			font-size: 16px;
+			font-weight: bold;
+			transition: .15s ease;
+			cursor: pointer;
+			&:hover, &.active {
+				color: $primary;
+			}
+		}
+	}
+	&--full {
+		@include justify-content(space-between);
+	}
+}
+
 // Switch
 
 .switch {
