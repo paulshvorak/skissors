@@ -171,6 +171,9 @@ textarea {
 		padding: 0 20px;
 		background-color: $gray-light;
 	}
+	@media screen and (max-width: $screen-xs-max) {
+		margin: 35px 0;
+	}
 }
 
 .select   {
@@ -439,6 +442,16 @@ textarea {
 			}
 		}
 	}
+	@media screen and (max-width: $screen-xs-max) {
+		.actions {
+			&__item {
+				width: 105px;
+				&:not(:last-child) {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
 }
 
 // Block styles
@@ -501,6 +514,22 @@ textarea {
 	}
 	&--full {
 		@include justify-content(space-between);
+	}
+	@media screen and (max-width: $screen-xs-max) {
+		&__left, &__right {
+			min-width: 36px;
+			width: 36px;
+			height: 36px;
+			&:after {
+				top: 6px;
+				left: 13px;
+			}
+		}
+		&__inner {
+			.item {
+				margin: 0 12px;
+			}
+		}
 	}
 }
 

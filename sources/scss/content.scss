@@ -61,6 +61,21 @@
 			}
 		}
 	}
+	@media screen and (max-width: $screen-xs-max) {
+		&__inner {
+			max-width: 100%;
+			padding: 30px 10px;
+			border-radius: 0;
+			border-left: none;
+			border-right: none;
+			.item {
+				width: calc((100% - 40px)/ 2);
+				label {
+					font-size: 13px;
+				}
+			}
+		}
+	}
 }
 
 .listing {
@@ -107,7 +122,7 @@
 			@include flexbox();
 			@include justify-content(flex-end);
 			@include align-items(center);
-			width: calc(60%);
+			width: 60%;
 			.tabs {
 				position: relative;
 				bottom: -4px;
@@ -203,7 +218,7 @@
 				}
 			}
 			.pagination {
-				padding: 30px 20px;
+				padding: 30px;
 			}
 		}
 		.inner {
@@ -263,6 +278,95 @@
 				font-size: 28px;
 				font-weight: bold;
 				text-transform: uppercase;
+			}
+		}
+	}
+	@media screen and (max-width: $screen-xs-max) {
+		&__header {
+			display: block;
+			position: relative;
+			padding: 60px 0 70px;
+			.left {
+				width: 100%;
+			}
+			.right {
+				margin-left: -12px;
+				width: calc(100% + 24px);
+				background-color: $white;
+				.tabs {
+					position: absolute;
+					top: 0;
+					bottom: auto;
+					margin-right: 0;
+				}
+				.btn {
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+				}
+			}
+		}
+		&__inner {
+			display: block;
+			.aside, .inner {
+				width: 100%;
+				margin: 0;
+			}
+			.aside {
+				&__item {
+					padding: 20px 30px;
+					.left {
+						width: 100%;
+						.pic {
+							margin-right: 10px;
+							min-width: 100px;
+							width: 100px;
+							height: 100px;
+						}
+						.info {
+							width: calc(100% - 120px);
+							&__title {
+								margin: 0 0 50px;
+							}
+						}
+					}
+					.right {
+						.mark {
+							position: absolute;
+							top: 20px;
+							right: 30px;
+							width: 10px;
+							height: 19px;
+							background-size: 10px;
+							&:hover {
+								background-position: 0 -39px;
+							}
+							&:active, &.active {
+								background-position: 0 -19px;
+							}
+						}
+					}
+					&:not(:last-child) {
+						&:after {
+							left: 30px;
+							right: 30px;
+						}
+					}
+				}
+			}
+			.inner {
+				padding: 30px;
+				&__header {
+					position: relative;
+					margin: 0 0 10px;
+					.actions {
+						position: absolute;
+						top: 70px;
+					}
+				}
+				&__info {
+					margin-bottom: 90px;
+				}
 			}
 		}
 	}
@@ -594,6 +698,93 @@
 			}
 			&__bio {
 				padding: 20px 0 0;
+			}
+		}
+	}
+	@media screen and (max-width: $screen-xs-max) {
+		&__header {
+			margin: 20px 0 74px;
+			padding: 30px;
+			background-color: $white;
+			border-radius: 5px;
+			border: 1px solid $gray-lighter;
+			.avatar {
+				margin: 0 20px 60px 0;
+				min-width: 100px;
+				width: 100px;
+				height: 100px;
+				&__empty {
+					width: 100px;
+					height: 100px;
+				}
+			}
+			.info {
+				.btn {
+					position: relative;
+					left: -120px;
+				}
+			}
+		}
+		&__inner {
+			display: block;
+			.inner {
+				width: 100%;
+				padding: 30px;
+				.portfolio {
+					&__list {
+						.item {
+							position: relative;
+							width: calc((100% - 20px) / 2);
+							height: 100px;
+							margin-bottom: 20px;
+							border-radius: 5px;
+							&__delete {
+								width: 32px;
+								height: 32px;
+							}
+							&:nth-child(3n+1), &:nth-child(3n+2) {
+								margin-right: 0;
+							}
+							&:nth-child(2n+1) {
+								margin-right: 20px;
+							}
+						}
+					}
+				}
+				.experience {
+					.title {
+						margin: 0 0 30px;
+					}
+					.subtitle {
+						margin: 0 0 30px;
+					}
+					.form {
+						&__item {
+							display: block;
+							margin: 0 0 20px;
+							.input-wrapper {
+								width: 100%;
+								&:not(:last-child) {
+									margin-bottom: 20px;
+								}
+							}
+							&--half {
+								@include flexbox();
+								margin: 0 0 20px;
+								width: 100%;
+								.input-wrapper {
+									width: calc(50% - 4px);
+									&:not(:last-child) {
+										margin-bottom: 0;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.aside {
+				display: none;
 			}
 		}
 	}

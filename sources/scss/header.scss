@@ -46,6 +46,37 @@
 	}
 	&__menu {
 		display: none;
+		padding: 8px 0;
+		cursor: pointer;
+		div {
+			margin: 0 auto;
+			width: 24px;
+			height: 2px;
+			background-color: $gray;
+			&:not(:last-child) {
+				margin-bottom: 4px;
+			}
+		}
+		//&:hover {
+		//	div {
+		//		&:first-child {
+		//			position: relative;
+		//			left: -2px;
+		//		}
+		//		&:nth-child(2) {
+		//			position: relative;
+		//			right: -2px;
+		//		}
+		//		&:nth-child(3) {
+		//			position: relative;
+		//			left: -2px;
+		//		}
+		//	}
+		//}
+	}
+	&__add {
+		display: none;
+		cursor: pointer;
 	}
 	&__nav {
 		@include flexbox();
@@ -58,6 +89,16 @@
 			&.active {
 				color: $primary;
 			}
+		}
+	}
+	@media screen and (max-width: $screen-xs-max) {
+		&__nav {
+			display: none;
+		}
+		&__menu, &__add {
+			display: block;
+			width: 32px;
+			height: 32px;
 		}
 	}
 }
