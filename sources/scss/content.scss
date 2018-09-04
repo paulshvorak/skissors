@@ -890,6 +890,45 @@
 								}
 							}
 						}
+						&.filled {
+							label {
+								position: relative;
+								overflow: hidden;
+								.inner {
+									position: relative;
+									.avatar {
+										z-index: 0;
+										position: absolute;
+										top: 50%;
+										left: 50%;
+										min-height: 160px;
+										min-width: 160px;
+										transform: translate(-50%, -50%);
+										&-title {
+											display: none;
+										}
+										&--empty {
+											display: none;
+										}
+									}
+								}
+								&:after {
+									content: '';
+									position: absolute;
+									top: 0;
+									left: 0;
+									right: 0;
+									bottom: 0;
+									background-color: rgba(194, 28, 49, 0);
+									transition: .15s ease;
+								}
+								&:hover {
+									&:after {
+										background-color: rgba(194, 28, 49, .6);
+									}
+								}
+							}
+						}
 					}
 				}
 				.actions {

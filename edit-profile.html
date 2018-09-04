@@ -75,15 +75,24 @@
 						</div>
 						<form class="profile__form form">
 							<div class="title">Personal Data</div>
-							<div class="form__item form__item--avatar">
+
+							<!--
+
+							 .filled - add class if image upload
+
+							 -->
+
+							<div class="form__item form__item--avatar filled">
 								<input id="edit-profile-avatar" type="file">
 								<label for="edit-profile-avatar">
 									<div class="inner">
-										<img src="app/images/icon-avatar--dark-gray.png" alt="avatar icon">
+										<img class="avatar" src="app/images/aside__item.jpg" alt="avatar">
+										<img class="avatar--empty" src="app/images/icon-avatar--dark-gray.png" alt="avatar icon">
 										<div class="avatar-title">Add Photo</div>
 									</div>
 								</label>
 							</div>
+
 							<div class="form__item">
 								<div class="input-wrapper">
 									<input id="edit-profile-fullname" type="text">
