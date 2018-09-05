@@ -13,6 +13,21 @@
 	<header class="header">
 		<div class="container">
 			<div class="header__inner">
+
+				<!--
+
+				Back button
+
+				<div class="header__back"></div>
+
+				-->
+
+
+				<div class="header__menu js-menu">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
 				<a href="index.html" class="header__logo">
 					<img src="app/images/logo-new.png" alt="logo">
 				</a>
@@ -22,7 +37,31 @@
 					<a href="#" class="item link link--default">My Profile</a>
 					<a href="#" class="item link link--default">Sign Out</a>
 				</div>
-				<div class="header__menu"></div>
+				<div class="header__add">
+					<img src="app/images/icon-add--circle.png" alt="add icon">
+				</div>
+				<div class="header-mobile js-sidebar">
+					<div class="header-mobile__close js-sidebar-menu__close"></div>
+					<div class="header-mobile__logo">
+						<a href="index.html">
+							<img src="app/images/logo--white.png" alt="logo white">
+						</a>
+					</div>
+					<div class="header-mobile__nav">
+						<div class="item">
+							<a href="#" class="active">Job Board</a>
+						</div>
+						<div class="item">
+							<a href="#">Post Job</a>
+						</div>
+						<div class="item">
+							<a href="#">My Profile</a>
+						</div>
+						<div class="item">
+							<a href="#">Sign Out</a>
+						</div>
+					</div>
+				</div>
 			</div>
 			<form class="header__filters">
 				<div class="input-wrapper item">
@@ -30,12 +69,12 @@
 					<label for="filters-text">Job Title, Keyword, or Salon</label>
 					<div class="error-message">Error message</div>
 				</div>
-				<div class="input-wrapper item">
+				<div class="location js-filters input-wrapper item">
 					<input id="filters-location" type="text">
 					<label for="filters-location">Location</label>
 					<div class="error-message">Error message</div>
 				</div>
-				<div class="select item">
+				<div class="distance js-filters select item">
 					<select>
 						<option value="7 miles">7 miles</option>
 						<option value="7 miles">7 miles</option>
@@ -43,7 +82,11 @@
 						<option value="7 miles">7 miles</option>
 					</select>
 				</div>
-				<button class="btn item">search</button>
+				<div class="filters js-filters-btn item">
+					<img src="app/images/icon-filter.png" alt="filter icon">
+				</div>
+				<button class="btn search item">search</button>
+				<button class="btn btn--icon btn--search item"></button>
 			</form>
 		</div>
 	</header>
@@ -55,7 +98,7 @@
 				<div class="profile__header">
 					<!--
 
-					-----Avatar empty-----
+					 -----Avatar empty-----
 
 					<div class="avatar__empty">
 						<img src="app/images/icon-avatar--gray.png" alt="empty avatar">
@@ -78,8 +121,9 @@
 							<div class="tabs__item active">Portoflio</div>
 							<div class="tabs__item">Experiences</div>
 							<div class="tabs__item">Reviews</div>
+							<div class="tabs__item tabs__item--mobile">Bio</div>
 						</div>
-						<div style="display: none" class="portfolio">
+						<div class="portfolio">
 							<div class="inner__header portfolio__header">
 								<div class="title">Portfolio</div>
 								<div class="actions">
@@ -119,7 +163,7 @@
 								<div class="txt">There are no portfolio photos yet<br>Start Adding...</div>
 							</div>
 						</div>
-						<div class="experience">
+						<div style="display: none" class="experience">
 							<div class="title">Experience</div>
 							<div class="subtitle">Place 1</div>
 							<form action="" class="experience__form form">
@@ -159,6 +203,7 @@
 						<div style="display: none" class="reviews">
 							<div class="reviews__inner">
 								<div class="title title--sm">Reviews</div>
+								<button class="btn btn-add">add comment</button>
 								<div class="list">
 									<div class="list__item">
 										<div class="info">
@@ -188,6 +233,13 @@
 									</div>
 								</div>
 							</div>
+
+							<!--
+
+							add next block to modal
+
+							-->
+
 							<div class="reviews__add-comment">
 								<div class="title title--sm">Add your comment</div>
 								<form class="comment">
@@ -208,6 +260,21 @@
 										<button class="btn btn--sm btn--block">submit</button>
 									</div>
 								</form>
+							</div>
+
+						</div>
+						<div style="display: none" class="bio">
+							<div class="bio__specialities">
+								<div class="title title--sm">Specialities</div>
+								<div class="txt">Wig, Weave, Make - Up</div>
+							</div>
+							<div class="bio__info">
+								<div class="email">example@email.com</div>
+								<div class="phone">212-399-4074</div>
+							</div>
+							<div class="bio__bio">
+								<div class="title title--sm">Bio</div>
+								<div class="txt">Welcome to Bonnti! Helping stylist get the recognition they deserve and making it easier to navigate your hair experience Boston, MA, USA</div>
 							</div>
 						</div>
 					</div>
@@ -232,6 +299,8 @@
 	</main>
 
 </div>
+
+<script src="app/js/main.js"></script>
 
 </body>
 

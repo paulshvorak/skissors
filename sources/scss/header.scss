@@ -1,6 +1,32 @@
 .header {
+	position: relative;
 	background: $white;
 	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+	&__back {
+		position: relative;
+		width: 32px;
+		height: 32px;
+		&:after {
+			content: '';
+			position: absolute;
+			left: 11px;
+			top: 13px;
+			width: 10px;
+			height: 2px;
+			background-color: $gray-dark;
+			transform: rotate(-45deg);
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			left: 11px;
+			top: 19px;
+			width: 10px;
+			height: 2px;
+			background-color: $gray-dark;
+			transform: rotate(45deg);
+		}
+	}
 	&__inner {
 		padding: 30px 0;
 		@include flexbox();
@@ -8,6 +34,7 @@
 		@include align-items(center);
 	}
 	&__filters {
+		position: relative;
 		@include flexbox();
 		padding: 20px 0;
 		border-top: 1px solid $gray-lighter;
@@ -29,6 +56,10 @@
 					}
 				}
 			}
+			label {
+				top: 19px;
+				font-size: 12px;
+			}
 			&.has-value {
 				input {
 					margin-top: 0;
@@ -38,10 +69,22 @@
 				}
 			}
 		}
+		.filters {
+			display: none;
+			height: 24px;
+			width: 24px;
+		}
 		.select {
+			select {
+				font-size: 12px;
+				font-weight: bold;
+			}
 			&:after, &:before {
 				top: 25px;
 			}
+		}
+		.btn--search {
+			display: none;
 		}
 	}
 	&__menu {
@@ -91,7 +134,76 @@
 			}
 		}
 	}
+	&-mobile {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 999;
+		padding: 30px;
+		background-color: rgba(38, 38, 38, .95);
+		transition: .2s ease;
+		transform: translateX(-100%);
+		&__close {
+			position: absolute;
+			top: 30px;
+			left: 30px;
+			width: 32px;
+			height: 32px;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 8px;
+				left: 15px;
+				width: 2px;
+				height: 16px;
+				transform: rotate(-45deg);
+				background-color: $white;
+			}
+			&:before {
+				content: '';
+				position: absolute;
+				top: 8px;
+				left: 15px;
+				width: 2px;
+				height: 16px;
+				transform: rotate(45deg);
+				background-color: $white;
+			}
+		}
+		&__logo {
+			margin: 0 0 30px;
+			padding: 0 0 30px;
+			text-align: center;
+			border-bottom: 1px solid rgba(255, 255, 255, .2);
+		}
+		&__nav {
+			.item {
+				text-align: center;
+				a {
+					font-size: 16px;
+					color: rgba(255, 255, 255, .4);
+					&.active {
+						color: $white;
+					}
+				}
+				&:not(:last-child) {
+					margin: 0 0 40px;
+				}
+			}
+		}
+		&--active {
+			transform: translateX(0);
+		}
+	}
 	@media screen and (max-width: $screen-xs-max) {
+		padding: 0 10px;
+		&__logo {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
 		&__nav {
 			display: none;
 		}
@@ -99,6 +211,41 @@
 			display: block;
 			width: 32px;
 			height: 32px;
+		}
+		&__filters {
+			display: block;
+			padding: 20px 0 30px;
+			.item {
+				width: 100%;
+				&:first-child {
+					width: 100%;
+				}
+				&:not(:last-child) {
+					margin-right: 0;
+					margin-bottom: 10px;
+				}
+			}
+			.search, .location, .distance  {
+				display: none;
+				&.visible {
+					display: block;
+				}
+			}
+			.btn--search {
+				position: absolute;
+				width: 44px;
+				right: 10px;
+				top: 30px;
+				display: block;
+			}
+			.filters {
+				position: absolute;
+				width: 24px;
+				top: 32px;
+				right: 64px;
+				display: block;
+				margin: 0;
+			}
 		}
 	}
 }

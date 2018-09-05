@@ -8,11 +8,26 @@
 </head>
 <body>
 
-<div class="page">
+<div class="page ">
 
 	<header class="header">
 		<div class="container">
 			<div class="header__inner">
+
+				<!--
+
+				Back button
+
+				<div class="header__back"></div>
+
+				-->
+
+
+				<div class="header__menu js-menu">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
 				<a href="index.html" class="header__logo">
 					<img src="app/images/logo-new.png" alt="logo">
 				</a>
@@ -22,7 +37,31 @@
 					<a href="#" class="item link link--default">My Profile</a>
 					<a href="#" class="item link link--default">Sign Out</a>
 				</div>
-				<div class="header__menu"></div>
+				<div class="header__add">
+					<img src="app/images/icon-add--circle.png" alt="add icon">
+				</div>
+				<div class="header-mobile js-sidebar">
+					<div class="header-mobile__close js-sidebar-menu__close"></div>
+					<div class="header-mobile__logo">
+						<a href="index.html">
+							<img src="app/images/logo--white.png" alt="logo white">
+						</a>
+					</div>
+					<div class="header-mobile__nav">
+						<div class="item">
+							<a href="#" class="active">Job Board</a>
+						</div>
+						<div class="item">
+							<a href="#">Post Job</a>
+						</div>
+						<div class="item">
+							<a href="#">My Profile</a>
+						</div>
+						<div class="item">
+							<a href="#">Sign Out</a>
+						</div>
+					</div>
+				</div>
 			</div>
 			<form class="header__filters">
 				<div class="input-wrapper item">
@@ -30,12 +69,12 @@
 					<label for="filters-text">Job Title, Keyword, or Salon</label>
 					<div class="error-message">Error message</div>
 				</div>
-				<div class="input-wrapper item">
+				<div class="location js-filters input-wrapper item">
 					<input id="filters-location" type="text">
 					<label for="filters-location">Location</label>
 					<div class="error-message">Error message</div>
 				</div>
-				<div class="select item">
+				<div class="distance js-filters select item">
 					<select>
 						<option value="7 miles">7 miles</option>
 						<option value="7 miles">7 miles</option>
@@ -43,12 +82,16 @@
 						<option value="7 miles">7 miles</option>
 					</select>
 				</div>
-				<button class="btn item">search</button>
+				<div class="filters js-filters-btn item">
+					<img src="app/images/icon-filter.png" alt="filter icon">
+				</div>
+				<button class="btn search item">search</button>
+				<button class="btn btn--icon btn--search item"></button>
 			</form>
 		</div>
 	</header>
 
-	<main class="main">
+	<main class="main page-edit-profile">
 
 		<div class="container">
 			<div class="section__title title">My Profile</div>
@@ -59,7 +102,7 @@
 					<div class="item">Specialities</div>
 				</div>
 				<div class="edit-profile__inner">
-					<div  class="profile">
+					<div style="display: none" class="profile">
 						<div class="profile__switch switch">
 							<div class="switch__title">Select Account Type</div>
 							<div class="switch__inner">
@@ -82,7 +125,7 @@
 
 							 -->
 
-							<div class="form__item form__item--avatar filled">
+							<div class="form__item form__item--avatar">
 								<input id="edit-profile-avatar" type="file">
 								<label for="edit-profile-avatar">
 									<div class="inner">
@@ -176,7 +219,7 @@
 							</div>
 						</form>
 					</div>
-					<form style="display: none" class="specialities-wrapper form">
+					<form class="specialities-wrapper form">
 						<div class="edit-profile__title title">Specialities</div>
 						<div class="specialities">
 							<div class="specialities__inner">
@@ -233,6 +276,8 @@
 	</main>
 
 </div>
+
+<script src="app/js/main.js"></script>
 
 </body>
 

@@ -10,6 +10,87 @@
 
 <div class="page">
 
+	<header class="header">
+		<div class="container">
+			<div class="header__inner">
+
+				<!--
+
+				Back button
+
+				<div class="header__back"></div>
+
+				-->
+
+
+				<div class="header__menu js-menu">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<a href="index.html" class="header__logo">
+					<img src="app/images/logo-new.png" alt="logo">
+				</a>
+				<div class="header__nav">
+					<a href="#" class="item link link--default">Job Board</a>
+					<a href="#" class="item link link--default">Post Job</a>
+					<a href="#" class="item link link--default">My Profile</a>
+					<a href="#" class="item link link--default">Sign Out</a>
+				</div>
+				<div class="header__add">
+					<img src="app/images/icon-add--circle.png" alt="add icon">
+				</div>
+				<div class="header-mobile js-sidebar">
+					<div class="header-mobile__close js-sidebar-menu__close"></div>
+					<div class="header-mobile__logo">
+						<a href="index.html">
+							<img src="app/images/logo--white.png" alt="logo white">
+						</a>
+					</div>
+					<div class="header-mobile__nav">
+						<div class="item">
+							<a href="#" class="active">Job Board</a>
+						</div>
+						<div class="item">
+							<a href="#">Post Job</a>
+						</div>
+						<div class="item">
+							<a href="#">My Profile</a>
+						</div>
+						<div class="item">
+							<a href="#">Sign Out</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<form class="header__filters">
+				<div class="input-wrapper item">
+					<input id="filters-text" type="text">
+					<label for="filters-text">Job Title, Keyword, or Salon</label>
+					<div class="error-message">Error message</div>
+				</div>
+				<div class="location js-filters input-wrapper item">
+					<input id="filters-location" type="text">
+					<label for="filters-location">Location</label>
+					<div class="error-message">Error message</div>
+				</div>
+				<div class="distance js-filters select item">
+					<select>
+						<option value="7 miles">7 miles</option>
+						<option value="7 miles">7 miles</option>
+						<option value="7 miles">7 miles</option>
+						<option value="7 miles">7 miles</option>
+					</select>
+				</div>
+				<div class="filters js-filters-btn item">
+					<img src="app/images/icon-filter.png" alt="filter icon">
+				</div>
+				<button class="btn search item">search</button>
+				<button class="btn btn--icon btn--search item"></button>
+			</form>
+		</div>
+	</header>
+
 	<main class="main">
 
 		<div class="container">
@@ -83,13 +164,13 @@
 						<div class="half">
 							<div class="checkbox">
 								<input id="booking" type="checkbox">
-								<label for="booking">Booking</label>
+								<label for="booking" class="width-crop">Booking</label>
 							</div>
 						</div>
 						<div class="half">
 							<div class="checkbox">
 								<input id="stylists" type="checkbox">
-								<label for="stylists">Only For Stylists</label>
+								<label for="stylists" class="width-crop">Only For Stylists</label>
 							</div>
 						</div>
 					</div>
@@ -104,6 +185,8 @@
 	</main>
 
 </div>
+
+<script src="app/js/main.js"></script>
 
 </body>
 

@@ -268,6 +268,23 @@ textarea {
 			color: $primary;
 		}
 	}
+	@media screen and (max-width: $screen-xs-max) {
+		label {
+			padding-left: 40px;
+			line-height: 30px;
+			font-size: 12px;
+			&:after {
+				width: 30px;
+				height: 30px;
+			}
+			&:before {
+				left: 6px;
+				top: 6px;
+				width: 18px;
+				height: 18px;
+			}
+		}
+	}
 }
 
 // Container
@@ -289,8 +306,8 @@ textarea {
 			
 	@media (max-width: $screen-xs-max) {
 		
-		padding-left: 12px;
-		padding-right: 12px;
+		padding-left: 20px;
+		padding-right: 20px;
 		
 	}
 	
@@ -375,6 +392,15 @@ textarea {
 			font-family: FontAwesome;
 		}
 	}
+	&--search {
+		width: 44px;
+		min-width: 44px;
+		padding: 8px 12px;
+		&:after {
+			margin-left: 2px;
+			content: "\f002";
+		}
+	}
 	&--map {
 		&:after {
 			content: "\f124";
@@ -388,6 +414,17 @@ textarea {
 	&--list {
 		&:after {
 			content: "\f0ca";
+		}
+	}
+	&--map, &--list {
+		@media screen and (max-width: $screen-xs-max) {
+			padding: 14px 12px;
+			width: 100%;
+			text-transform: uppercase;
+			letter-spacing: 0.2em;
+			&:after {
+				display: none;
+			}
 		}
 	}
 }
@@ -460,7 +497,6 @@ textarea {
 	background-color: $white;
 	border-radius: 5px;
 	border: 1px solid $gray-lighter;
-	overflow: hidden;
 }
 
 // Pagintaion

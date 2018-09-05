@@ -285,24 +285,36 @@
 		&__header {
 			display: block;
 			position: relative;
-			padding: 60px 0 70px;
+			padding: 0 0 100px;
 			.left {
+				position: absolute;
+				top: 60px;
 				width: 100%;
 			}
 			.right {
-				margin-left: -12px;
-				width: calc(100% + 24px);
-				background-color: $white;
+				margin-left: -20px;
+				margin-bottom: 30px;
+				width: calc(100% + 40px);
 				.tabs {
-					position: absolute;
-					top: 0;
-					bottom: auto;
+					position: static;
 					margin-right: 0;
+					&-wrapper {
+						width: 100%;
+						padding: 0 30px;
+						background-color: $white;
+						overflow-x: auto;
+					}
+					&__item {
+						width: calc(100% / 4);
+						min-width: 100px;
+					}
 				}
 				.btn {
 					position: absolute;
-					bottom: 0;
+					bottom: 20px;
+					left: 0;
 					width: 100%;
+					padding: 18px 12px;
 				}
 			}
 		}
@@ -313,6 +325,7 @@
 				margin: 0;
 			}
 			.aside {
+				margin-bottom: 30px;
 				&__item {
 					padding: 20px 30px;
 					.left {
@@ -388,6 +401,7 @@
 					@include align-items(center);
 					width: 140px;
 					height: 140px;
+					min-width: 140px;
 					margin-right: 20px;
 					background-color: #DEDEDE;
 				}
@@ -439,6 +453,61 @@
 			}
 		}
 	}
+	@media screen and (max-width: $screen-xs-max) {
+		padding: 20px;
+		&__photo {
+			.photo {
+				.avatar {
+					&__empty {
+						width: 100px;
+						height: 100px;
+						min-width: 100px;
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+		&__details {
+			.form {
+				&__item {
+					display: block;
+					.input-wrapper {
+						width: 100%;
+						&:not(:last-child) {
+							margin-bottom: 20px;
+						}
+					}
+					&.checkboxes {
+						@include flexbox();
+					}
+					.half {
+						@include flexbox();
+						margin: 0 0 20px;
+						width: 100%;
+						.input-wrapper {
+							width: calc(50% - 4px);
+							&:not(:last-child) {
+								margin-bottom: 0;
+							}
+						}
+					}
+					&:not(:last-child) {
+						margin: 0 0 20px;
+					}
+				}
+				&__actions {
+					display: block;
+					margin: 40px 0 0;
+					.btn {
+						width: 100%;
+						&:not(:last-child) {
+							margin: 0 0 20px;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 .profile {
@@ -480,6 +549,9 @@
 				margin: 0 0 40px;
 				.tabs__item {
 					width: calc(100% / 3);
+					&--mobile {
+						display: none;
+					}
 				}
 			}
 			.portfolio {
@@ -594,6 +666,9 @@
 					.title {
 						margin: 0 0 24px;
 					}
+					.btn-add {
+						display: none;
+					}
 					.list {
 						&__item {
 							padding: 20px 0;
@@ -604,6 +679,7 @@
 								&__avatar {
 									margin-right: 24px;
 									width: 40px;
+									min-width: 40px;
 									height: 40px;
 									overflow: hidden;
 									border-radius: 50%;
@@ -674,6 +750,29 @@
 					}
 				}
 			}
+			.bio {
+				.title {
+					margin: 0 0 20px;
+					color: $black;
+				}
+				.txt {
+					line-height: 21px;
+				}
+				&__specialities {
+					padding: 0 0 20px;
+					border-bottom: 1px solid $gray-lighter;
+				}
+				&__info {
+					padding: 20px 0;
+					border-bottom: 1px solid $gray-lighter;
+					.email {
+						margin: 0 0 10px;
+					}
+				}
+				&__bio {
+					padding: 20px 0 0;
+				}
+			}
 		}
 		.aside {
 			width: 29%;
@@ -701,9 +800,41 @@
 			}
 		}
 	}
+	@media screen and (max-width: $screen-sm-max) {
+		&__inner {
+			.inner {
+				position: relative;
+				width: 100%;
+				padding: 30px 20px;
+				&__tabs {
+					.tabs__item {
+						width: calc(100% / 4);
+						min-width: 100px;
+						&--mobile {
+							display: block;
+						}
+					}
+				}
+				.reviews {
+					.btn-add {
+						display: inline-block;
+					}
+					&__inner {
+						width: 100%;
+					}
+					&__add-comment {
+						display: none;
+					}
+				}
+			}
+			.aside {
+				display: none;
+			}
+		}
+	}
 	@media screen and (max-width: $screen-xs-max) {
 		&__header {
-			margin: 20px 0 74px;
+			margin: 20px 0 140px;
 			padding: 30px;
 			background-color: $white;
 			border-radius: 5px;
@@ -728,9 +859,31 @@
 		&__inner {
 			display: block;
 			.inner {
-				width: 100%;
-				padding: 30px;
+				padding: 20px;
+				&__tabs {
+					position: absolute;
+					top: -68px;
+					left: 0;
+					width: 100%;
+					margin: 0;
+					overflow-x: auto;
+					-webkit-overflow-scrolling: touch;
+					
+				}
 				.portfolio {
+					&__header {
+						display: block;
+						margin: 0 0 30px;
+						.title {
+							margin: 0 0 30px;
+						}
+						.actions {
+							@include justify-content(space-between);
+							.btn {
+								width: calc(50% - 5px);
+							}
+						}
+					}
 					&__list {
 						.item {
 							position: relative;
@@ -782,9 +935,68 @@
 						}
 					}
 				}
-			}
-			.aside {
-				display: none;
+				.reviews {
+					display: block;
+					&__inner {
+						width: 100%;
+						.title {
+							margin: 0 0 24px;
+						}
+						.btn-add {
+							display: block;
+							width: 100%;
+						}
+						.list {
+							&__item {
+								padding: 20px 0;
+								.info {
+									@include flexbox();
+									@include align-items(flex-start);
+									margin: 0 0 20px;
+									&__avatar {
+										margin-right: 24px;
+										width: 40px;
+										height: 40px;
+										overflow: hidden;
+										border-radius: 50%;
+										img {
+											display: block;
+											max-width: 100%;
+											max-height: 100%;
+										}
+									}
+									&__inner {
+										margin-right: 57px;
+										.name {
+											margin: 0 0 6px;
+											color: $black;
+										}
+										.nickname {
+											font-size: 10px;
+											color: $gray-dark;
+										}
+									}
+								}
+								.txt {
+									line-height: 20px;
+									font-size: 13px;
+									color: #4D4D4D;
+								}
+								&:not(:last-child) {
+									border-bottom: 1px solid $gray-lighter;
+								}
+							}
+						}
+					}
+					&__add-comment {
+						
+						// to modal
+						display: none;
+						
+						width: 100%;
+						padding: 20px;
+					}
+				}
 			}
 		}
 	}
@@ -890,7 +1102,13 @@
 								}
 							}
 						}
+						.avatar {
+							display: none;
+						}
 						&.filled {
+							.avatar {
+								display: block;
+							}
 							label {
 								position: relative;
 								overflow: hidden;
@@ -996,5 +1214,163 @@
 		margin: 0 0 50px;
 		padding: 0 0 30px;
 		border-bottom: 1px solid $gray-lighter;
+	}
+	@media screen and (max-width: $screen-xs-max) {
+		position: relative;
+		display: block;
+		margin-top: 100px;
+		&__aside {
+			@include flexbox();
+			position: absolute;
+			top: -66px;
+			width: 100%;
+			background-color: transparent;
+			border-right: none;
+			border-bottom: 1px solid $gray-lighter;
+			.item {
+				width: calc(100% / 3);
+				color: $gray-dark;
+				padding: 0 0 21px;
+				border-bottom: 1px solid $gray-lighter;
+				cursor: pointer;
+				transition: .15s ease;
+				text-align: center;
+				font-size: 12px;
+				font-weight: bold;
+				background-color: transparent;
+				border-bottom: 2px solid transparent;
+				&.active {
+					background-color: transparent;
+					color: $primary;
+					border-color: $primary;
+					box-shadow: none;
+					&:hover {
+						background-color: transparent;
+						color: $white;
+					}
+				}
+				&:hover {
+					color: $primary;
+					background-color: transparent;
+					border-color: $primary;
+				}
+			}
+		}
+		&__inner {
+			width: 100%;
+			padding: 20px 20px 40px;
+			.profile {
+				&__switch {
+					margin: 0 0 40px;
+					.switch__list {
+						width: 100%;
+						.item {
+							width: calc(100% / 3);
+							text-align: center;
+						}
+					}
+				}
+				&__form {
+					.form {
+						&__item {
+							display: block;
+							margin: 0 0 20px;
+							.input-wrapper {
+								width: 100%;
+								&:not(:last-child) {
+									margin-bottom: 20px;
+								}
+							}
+							&--half {
+								@include flexbox();
+								margin: 0 0 20px;
+								width: 100%;
+								.input-wrapper {
+									width: calc(50% - 4px);
+									&:not(:last-child) {
+										margin-bottom: 0;
+									}
+								}
+							}
+						}
+					}
+					.actions {
+						margin: 40px 0 0;
+						.btn {
+							width: 100%;
+						}
+					}
+				}
+			}
+			.experience {
+				.title {
+					margin: 0 0 30px;
+					padding: 0;
+					border-bottom: none;
+				}
+				.subtitle {
+					margin: 0 0 30px;
+				}
+				.form {
+					&__item {
+						display: block;
+						margin: 0 0 20px;
+						.input-wrapper {
+							width: 100%;
+							&:not(:last-child) {
+								margin-bottom: 20px;
+							}
+						}
+						&--half {
+							@include flexbox();
+							margin: 0 0 20px;
+							width: 100%;
+							.input-wrapper {
+								width: calc(50% - 4px);
+								&:not(:last-child) {
+									margin-bottom: 0;
+								}
+							}
+						}
+					}
+					.actions {
+						display: block;
+						margin: 40px 0 0;
+						padding: 0;
+						border-top: none;
+						.btn {
+							width: 100%;
+							&:not(:last-child) {
+								margin: 0 0 20px;
+							}
+						}
+					}
+				}
+			}
+			.specialities-wrapper {
+				.title {
+					margin: 0 0 30px;
+					padding: 0;
+					border-bottom: none;
+				}
+				.specialities {
+					margin-left: -20px;
+					width: calc(100% + 40px);
+				}
+				.actions {
+					.btn {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+.page-edit-profile {
+	@media screen and (max-width: $screen-xs-max) {
+		.section__title {
+			display: none;
+		}
 	}
 }

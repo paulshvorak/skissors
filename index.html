@@ -8,12 +8,22 @@
 </head>
 <body>
 
-<div class="page">
+<div class="page js-page">
 
 	<header class="header">
 		<div class="container">
 			<div class="header__inner">
-				<div class="header__menu">
+
+				<!--
+
+				Back button
+
+				<div class="header__back"></div>
+
+				-->
+
+
+				<div class="header__menu js-menu">
 					<div></div>
 					<div></div>
 					<div></div>
@@ -30,6 +40,28 @@
 				<div class="header__add">
 					<img src="app/images/icon-add--circle.png" alt="add icon">
 				</div>
+				<div class="header-mobile js-sidebar">
+					<div class="header-mobile__close js-sidebar-menu__close"></div>
+					<div class="header-mobile__logo">
+						<a href="index.html">
+							<img src="app/images/logo--white.png" alt="logo white">
+						</a>
+					</div>
+					<div class="header-mobile__nav">
+						<div class="item">
+							<a href="#" class="active">Job Board</a>
+						</div>
+						<div class="item">
+							<a href="#">Post Job</a>
+						</div>
+						<div class="item">
+							<a href="#">My Profile</a>
+						</div>
+						<div class="item">
+							<a href="#">Sign Out</a>
+						</div>
+					</div>
+				</div>
 			</div>
 			<form class="header__filters">
 				<div class="input-wrapper item">
@@ -37,12 +69,12 @@
 					<label for="filters-text">Job Title, Keyword, or Salon</label>
 					<div class="error-message">Error message</div>
 				</div>
-				<div class="input-wrapper item">
+				<div class="location js-filters input-wrapper item">
 					<input id="filters-location" type="text">
 					<label for="filters-location">Location</label>
 					<div class="error-message">Error message</div>
 				</div>
-				<div class="select item">
+				<div class="distance js-filters select item">
 					<select>
 						<option value="7 miles">7 miles</option>
 						<option value="7 miles">7 miles</option>
@@ -50,7 +82,11 @@
 						<option value="7 miles">7 miles</option>
 					</select>
 				</div>
-				<button class="btn item">search</button>
+				<div class="filters js-filters-btn item">
+					<img src="app/images/icon-filter.png" alt="filter icon">
+				</div>
+				<button class="btn search item">search</button>
+				<button class="btn btn--icon btn--search item"></button>
 			</form>
 		</div>
 	</header>
@@ -71,11 +107,13 @@
 						</div>
 					</div>
 					<div class="right">
-						<div class="tabs">
-							<div class="tabs__item active">Latest</div>
-							<div class="tabs__item">Saved</div>
-							<div class="tabs__item">Applied</div>
-							<div class="tabs__item">Posted</div>
+						<div class="tabs-wrapper">
+							<div class="tabs">
+								<div class="tabs__item active">Latest</div>
+								<div class="tabs__item">Saved</div>
+								<div class="tabs__item">Applied</div>
+								<div class="tabs__item">Posted</div>
+							</div>
 						</div>
 						<button class="btn btn--icon btn--map btn--sm">Map View</button>
 
@@ -155,33 +193,33 @@
 							<div class="pagination__right"></div>
 						</div>
 					</div>
-					<div class="inner section-style">
+					<!--<div class="inner section-style">-->
 
-						<!--
+						<!--&lt;!&ndash;-->
 
-						-----Picture empty-----
+						<!-- -&#45;&#45;&#45;&#45;Picture empty-&#45;&#45;&#45;&#45;-->
 
-						<div class="inner__pic-empty">
-							<img src="app/images/icon-landscape--gray.png" alt="empty avatar">
-						</div>
+						<!--<div class="inner__pic-empty">-->
+							<!--<img src="app/images/icon-landscape&#45;&#45;gray.png" alt="empty avatar">-->
+						<!--</div>-->
 
-						-->
+						<!--&ndash;&gt;-->
 
-						<img src="app/images/inner__item.jpg" alt="item" class="inner__pic">
-						<div class="inner__header">
-							<div class="title title--md">Wawe Stylist</div>
-							<div class="actions">
-								<button class="actions__item btn btn--sm btn--gray">Apply</button>
-								<button class="actions__item btn--icon btn--saved btn btn--sm">Saved</button>
-							</div>
-						</div>
-						<div class="inner__info">
-							<div class="info__salon">Salon Name</div>
-							<div class="info__location">Anytown, USA</div>
-						</div>
-						<div class="inner__description">È universalmente riconosciuto che un lettore che osserva il layout di una pagina viene distratto dal contenuto testuale se questo è leggibile. Lo scopo dell’utilizzo del Lorem Ipsum è che offre una normale distribuzione delle lettere.</div>
-						<div class="inner__map">map</div>
-					</div>
+						<!--<img src="app/images/inner__item.jpg" alt="item" class="inner__pic">-->
+						<!--<div class="inner__header">-->
+							<!--<div class="title title&#45;&#45;md">Wawe Stylist</div>-->
+							<!--<div class="actions">-->
+								<!--<button class="actions__item btn btn&#45;&#45;sm btn&#45;&#45;gray">Apply</button>-->
+								<!--<button class="actions__item btn&#45;&#45;icon btn&#45;&#45;saved btn btn&#45;&#45;sm">Saved</button>-->
+							<!--</div>-->
+						<!--</div>-->
+						<!--<div class="inner__info">-->
+							<!--<div class="info__salon">Salon Name</div>-->
+							<!--<div class="info__location">Anytown, USA</div>-->
+						<!--</div>-->
+						<!--<div class="inner__description">È universalmente riconosciuto che un lettore che osserva il layout di una pagina viene distratto dal contenuto testuale se questo è leggibile. Lo scopo dell’utilizzo del Lorem Ipsum è che offre una normale distribuzione delle lettere.</div>-->
+						<!--<div class="inner__map">map</div>-->
+					<!--</div>-->
 
 					<!--
 
@@ -191,6 +229,8 @@
 
 					-->
 
+					<div class="inner inner--map">map</div>
+
 				</div>
 			</div>
 		</div>
@@ -198,6 +238,8 @@
 	</main>
 
 </div>
+
+<script src="app/js/main.js"></script>
 
 </body>
 
