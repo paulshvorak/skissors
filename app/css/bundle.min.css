@@ -748,6 +748,8 @@ input[type=date],input[type=text],input[type=email],input[type=password],textare
 .listing__header .right .tabs{position:static;margin-right:0}
 .listing__header .right .tabs-wrapper{width:100%;padding:0 30px;background-color:#fff;overflow-x:auto}
 .listing__header .right .tabs__item{width:calc(100% / 4);min-width:100px}
+.listing__header .right .tabs__item:last-child{position:relative}
+.listing__header .right .tabs__item:last-child:after{content:'';position:absolute;top:0;bottom:0;width:20px;right:-20px}
 .listing__header .right .btn{position:absolute;bottom:20px;left:0;width:100%;padding:18px 12px}
 .listing__inner{display:block}
 .listing__inner .aside,.listing__inner .inner{width:100%;margin:0}

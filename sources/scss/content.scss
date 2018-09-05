@@ -307,6 +307,17 @@
 					&__item {
 						width: calc(100% / 4);
 						min-width: 100px;
+						&:last-child {
+							position: relative;
+							&:after {
+								content: '';
+								position: absolute;
+								top: 0;
+								bottom: 0;
+								width: 20px;
+								right: -20px;
+							}
+						}
 					}
 				}
 				.btn {
