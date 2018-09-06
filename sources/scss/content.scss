@@ -1240,6 +1240,11 @@
 		padding: 0 0 30px;
 		border-bottom: 1px solid $gray-lighter;
 	}
+	@media screen and (max-width: $screen-sm-max) {
+		&__inner {
+			padding: 40px 60px 80px;
+		}
+	}
 	@media screen and (max-width: $screen-xs-max) {
 		position: relative;
 		display: block;
