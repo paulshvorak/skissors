@@ -709,7 +709,7 @@ input[type=date],input[type=text],input[type=email],input[type=password],textare
 .listing__header .left{display:flex;-webkit-justify-content:space-between;-moz-justify-content:space-between;-ms-justify-content:space-between;justify-content:space-between;-ms-flex-pack:space-between;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;align-items:center;width:40%}
 .listing__header .right,.listing__inner{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex}
 .listing__header .left .results{font-size:14px;color:#333}
-.listing__header .left .sort,.listing__header .left .sort select{font-weight:700;color:#666;font-size:12px}
+.listing__header .left .sort,.listing__header .left .sort select{font-size:12px;font-weight:700;color:#666}
 .listing__header .left .sort select{background:0 0;border:none;text-indent:1px;text-overflow:'';transition:.15s ease}
 .listing__header .left .sort select:hover{color:#000}
 .listing__header .right{display:flex;-webkit-justify-content:flex-end;-moz-justify-content:flex-end;-ms-justify-content:flex-end;justify-content:flex-end;-ms-flex-pack:flex-end;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;align-items:center;width:60%}
@@ -741,9 +741,13 @@ input[type=date],input[type=text],input[type=email],input[type=password],textare
 .listing__inner .inner__info{display:flex;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;align-items:center;margin:0 0 30px}
 .listing__inner .inner__info .info__salon{margin-right:28px}
 .listing__inner .inner__description{margin:0 0 40px;line-height:21px;font-size:14px;color:#4D4D4D}
-.listing__inner .inner--map,.listing__inner .inner__map{background-color:#888;color:#fff;font-size:28px;font-weight:700;text-transform:uppercase}
-.listing__inner .inner__map{display:flex;-webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;justify-content:center;-ms-flex-pack:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;align-items:center;height:300px}
-.listing__inner .inner--map{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;justify-content:center;-ms-flex-pack:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;align-items:center;height:470px;padding:0;border-radius:5px}
+.listing__inner .inner--map,.listing__inner .inner__map{-webkit-justify-content:center;background-color:#888;color:#fff;font-size:28px;font-weight:700;text-transform:uppercase}
+.listing__inner .inner__map{display:flex;-moz-justify-content:center;-ms-justify-content:center;justify-content:center;-ms-flex-pack:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;align-items:center;height:300px}
+.listing__inner .inner--map{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-moz-justify-content:center;-ms-justify-content:center;justify-content:center;-ms-flex-pack:center;-webkit-align-items:center;-moz-align-items:center;-ms-align-items:center;align-items:center;height:470px;padding:0;border-radius:5px}
+@media screen and (max-width:991px){.listing__inner{display:block}
+.listing__inner .aside,.listing__inner .inner{width:100%;margin:0}
+.listing__inner .aside{margin-bottom:30px}
+}
 @media screen and (max-width:767px){.listing__header{display:block;position:relative;padding:0 0 100px}
 .listing__header .left{position:absolute;top:60px;width:100%}
 .listing__header .right{margin-left:-20px;margin-bottom:30px;width:calc(100% + 40px)}
@@ -753,9 +757,6 @@ input[type=date],input[type=text],input[type=email],input[type=password],textare
 .listing__header .right .tabs__item:last-child{position:relative}
 .listing__header .right .tabs__item:last-child:after{content:'';position:absolute;top:0;bottom:0;width:20px;right:-20px}
 .listing__header .right .btn{position:absolute;bottom:20px;left:0;width:100%;padding:18px 12px}
-.listing__inner{display:block}
-.listing__inner .aside,.listing__inner .inner{width:100%;margin:0}
-.listing__inner .aside{margin-bottom:30px}
 .listing__inner .aside__item{padding:20px 30px}
 .listing__inner .aside__item .left{width:100%}
 .listing__inner .aside__item .left .pic{margin-right:10px;min-width:100px;width:100px;height:100px}
@@ -938,7 +939,7 @@ input[type=date],input[type=text],input[type=email],input[type=password],textare
 .edit-profile__inner .profile__form .form__item--avatar.filled .avatar{display:block}
 .edit-profile__inner .profile__form .form__item--avatar.filled label{position:relative;overflow:hidden}
 .edit-profile__inner .profile__form .form__item--avatar.filled label .inner{position:relative}
-.edit-profile__inner .profile__form .form__item--avatar.filled label .inner .avatar{z-index:0;position:absolute;top:50%;left:50%;min-height:160px;min-width:160px;transform:translate(-50%,-50%)}
+.edit-profile__inner .profile__form .form__item--avatar.filled label .inner .avatar{z-index:0;position:absolute;top:50%;left:50%;min-height:160px;min-width:160px;max-height:100%;max-width:100%;transform:translate(-50%,-50%)}
 .edit-profile__inner .profile__form .form__item--avatar.filled label .inner .avatar--empty,.edit-profile__inner .profile__form .form__item--avatar.filled label .inner .avatar-title{display:none}
 .edit-profile__inner .profile__form .form__item--avatar.filled label:after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-color:rgba(194,28,49,0);transition:.15s ease}
 .edit-profile__inner .profile__form .form__item--avatar.filled label:hover:after{background-color:rgba(194,28,49,.6)}
